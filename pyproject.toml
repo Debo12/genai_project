@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "nlp-project"
+version = "0.1.0"
+description = "NLP Development Workspace"
+authors = ["Debo"]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+
+numpy = ">=2.0,<2.1"
+pandas = "^2.3"
+scipy = "^1.16"
+scikit-learn = "^1.7"
+
+matplotlib = "^3.10"
+plotly = "^6.2"
+
+nltk = "^3.9"
+spacy = "^3.8"
+
+transformers = "^4.54"
+datasets = "^4.0"
+sentence-transformers = "^5.0"
+tokenizers = "^0.21"
+accelerate = "^1.10"
+evaluate = "^0.4"
+huggingface-hub = "^0.34"
+
+torch = "^2.8"
+
+python-dotenv = "^1.1"
+
+jupyterlab = "^4.4"
+ipykernel = "^6.30"
+jupyter = "^1.1.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4"
+ruff = "^0.12"
+black = "^25.1"
+mypy = "^1.17"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
