@@ -6,31 +6,50 @@ Personal revision notes for the text-preprocessing exercises in Krish Naik's Ude
 
 ```mermaid
 flowchart LR
-    A[Raw Text] --> B[Text Preprocessing]
-    B --> C[Text to Vector]
-    C --> D[Machine Learning Algorithm]
-    D --> E[Prediction / Insight]
+    A[Dataset<br/>Text + Output label] --> B[Text Preprocessing]
+    B --> C[Text Representation<br/>Numerical Vectors]
+    C --> D[ML Algorithm]
+    D --> E[Prediction]
 
     B --- B1[Tokenization]
-    B --- B2[Stop-word Removal]
-    B --- B3[Stemming]
-    B --- B4[Lemmatization]
-    B --- B5[Part-of-Speech Tagging]
-    B --- B6[Named-Entity Recognition]
+    B --- B2[Lowercasing]
+    B --- B3[Regular Expressions]
+    B --- B4[Stemming]
+    B --- B5[Lemmatization]
 
-    C --- C1[Bag of Words]
-    C --- C2[Binary Bag of Words]
-    C --- C3[N-grams]
-    C --- C4[TF-IDF]
-    C --- C5[Word2Vec]
-    C --- C6[Average Word2Vec]
-
-    D --- D1[Classification]
-    D --- D2[Regression]
-    D --- D3[Clustering]
+    C --- C1[One-Hot Encoding]
+    C --- C2[Bag of Words]
+    C --- C3[TF-IDF]
+    C --- C4[Word2Vec]
+    C --- C5[Average Word2Vec]
 ```
 
-This is the course path: clean and understand text, convert it into numerical features, then train an ML model for the task.
+### Example: sentiment-analysis dataset
+
+| Text | Output |
+| --- | ---: |
+| The food is good | 1 |
+| The food is bad | 0 |
+| Pizza is amazing | 1 |
+| Burger is bad | 0 |
+
+`1` means positive sentiment and `0` means negative sentiment. The goal is to preprocess each review, convert it to numbers, and train an ML algorithm to predict the sentiment of new text.
+
+### What to remember
+
+```text
+"The food is good"
+        ↓ tokenization
+["The", "food", "is", "good"]
+        ↓ lowercasing / regex cleaning / stemming or lemmatization
+clean tokens
+        ↓ one-hot encoding, BoW, TF-IDF, or Word2Vec
+numerical vector
+        ↓ ML algorithm
+positive or negative prediction
+```
+
+BoW and TF-IDF count or weight words but do not naturally preserve word order or meaning. Word2Vec represents words as dense vectors, so it captures some semantic similarity.
 
 ## Notebook roadmap
 
