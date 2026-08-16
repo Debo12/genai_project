@@ -6,22 +6,10 @@ Personal revision notes for the text-preprocessing exercises in Krish Naik's Ude
 
 ```mermaid
 flowchart LR
-    A[Dataset<br/>Text + Output label] --> B[Text Preprocessing]
-    B --> C[Text Representation<br/>Numerical Vectors]
-    C --> D[ML Algorithm]
-    D --> E[Prediction]
-
-    B --- B1[Tokenization]
-    B --- B2[Lowercasing]
-    B --- B3[Regular Expressions]
-    B --- B4[Stemming]
-    B --- B5[Lemmatization]
-
-    C --- C1[One-Hot Encoding]
-    C --- C2[Bag of Words]
-    C --- C3[TF-IDF]
-    C --- C4[Word2Vec]
-    C --- C5[Average Word2Vec]
+    A[1. Dataset<br/>Text + Output] --> B[2. Text Preprocessing — 1<br/>Tokenization<br/>Lowercasing words<br/>Regular expressions]
+    B --> C[3. Text Preprocessing — 2<br/>Stemming<br/>Lemmatization<br/>Stop words]
+    C --> D[4. Text → Vectors<br/>One-Hot Encoding<br/>Bag of Words<br/>TF-IDF<br/>Word2Vec<br/>Average Word2Vec]
+    D --> E[5. ML Algorithms]
 ```
 
 ### Example: sentiment-analysis dataset
@@ -33,7 +21,7 @@ flowchart LR
 | Pizza is amazing | 1 |
 | Burger is bad | 0 |
 
-`1` means positive sentiment and `0` means negative sentiment. The goal is to preprocess each review, convert it to numbers, and train an ML algorithm to predict the sentiment of new text.
+`1` means positive sentiment and `0` means negative sentiment. The tutorial's workflow moves from this labelled dataset through two preprocessing stages, converts the cleaned text into vectors, and finally passes those vectors to an ML algorithm.
 
 ### What to remember
 
@@ -41,7 +29,9 @@ flowchart LR
 "The food is good"
         ↓ tokenization
 ["The", "food", "is", "good"]
-        ↓ lowercasing / regex cleaning / stemming or lemmatization
+        ↓ lowercasing / regex cleaning
+tokens
+        ↓ stemming / lemmatization / stop-word removal
 clean tokens
         ↓ one-hot encoding, BoW, TF-IDF, or Word2Vec
 numerical vector
@@ -49,7 +39,7 @@ numerical vector
 positive or negative prediction
 ```
 
-BoW and TF-IDF count or weight words but do not naturally preserve word order or meaning. Word2Vec represents words as dense vectors, so it captures some semantic similarity.
+BoW and TF-IDF count or weight words but do not naturally preserve word order or meaning. Word2Vec represents words as dense vectors, so it captures some semantic similarity; the tutorial uses Gensim for Word2Vec work.
 
 ## Notebook roadmap
 
