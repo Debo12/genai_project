@@ -2,6 +2,36 @@
 
 Personal revision notes for the text-preprocessing exercises in Krish Naik's Udemy Generative AI course. Each notebook focuses on one foundational NLTK technique that is commonly used before feature extraction, classical machine-learning models, or downstream NLP tasks.
 
+## NLP learning roadmap
+
+```mermaid
+flowchart LR
+    A[Raw Text] --> B[Text Preprocessing]
+    B --> C[Text to Vector]
+    C --> D[Machine Learning Algorithm]
+    D --> E[Prediction / Insight]
+
+    B --- B1[Tokenization]
+    B --- B2[Stop-word Removal]
+    B --- B3[Stemming]
+    B --- B4[Lemmatization]
+    B --- B5[Part-of-Speech Tagging]
+    B --- B6[Named-Entity Recognition]
+
+    C --- C1[Bag of Words]
+    C --- C2[Binary Bag of Words]
+    C --- C3[N-grams]
+    C --- C4[TF-IDF]
+    C --- C5[Word2Vec]
+    C --- C6[Average Word2Vec]
+
+    D --- D1[Classification]
+    D --- D2[Regression]
+    D --- D3[Clustering]
+```
+
+This is the course path: clean and understand text, convert it into numerical features, then train an ML model for the task.
+
 ## Notebook roadmap
 
 ```text
