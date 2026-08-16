@@ -4,6 +4,8 @@ Personal revision notes for the text-preprocessing exercises in Krish Naik's Ude
 
 ## NLP learning roadmap
 
+**Tutorial reference:** Video 45, *What's Next* — Krish Naik's Udemy course *Complete Generative AI Course with LangChain and Hugging Face*.
+
 ```mermaid
 flowchart LR
     A[1. Dataset<br/>Text + Output] --> B[2. Text Preprocessing — 1<br/>Tokenization<br/>Lowercasing words<br/>Regular expressions]
@@ -177,3 +179,6 @@ Open a notebook in `src/text_preprocessing/` and run its cells in order. The ini
 ## Learning source
 
 These exercises follow Krish Naik's Udemy course, *Complete Generative AI Course with LangChain and Hugging Face*.
+
+- Videos completed in this repository: text-preprocessing tutorials (tokenization, stop words, stemming, lemmatization, POS tagging, and NER).
+- Roadmap shown above: Video 45, *What's Next*.
